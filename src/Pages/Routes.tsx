@@ -4,11 +4,11 @@ import CharactersList from "./CharactersList";
 
 export const MainRoutes = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/character-detail" element={<CharacterDetail />} />
         <Route path="/" element={<CharactersList />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };

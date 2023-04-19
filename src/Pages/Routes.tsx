@@ -4,11 +4,11 @@ import CharactersList from "./CharactersList";
 
 export const MainRoutes = () => {
   return (
-    <HashRouter>
+    <BrowserRouter basename="/rick-morty-app">
       <Routes >
-        <Route path="/rick-morty-app/character-detail" element={<CharacterDetail />} />
-        <Route path="/rick-morty-app" element={<CharactersList />} />
+        <Route path="/" element={<CharactersList />} />
+        <Route path="/character-detail" element={<CharacterDetail />} />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 };

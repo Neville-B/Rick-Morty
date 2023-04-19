@@ -18,7 +18,7 @@ const CharactersList = () => {
     <>
       <h2>
         <center>Rick and Morty</center>
-        <Link to='character-detail'>Detail</Link>
+        <Link style={{ textDecoration: 'none' }} to='character-detail'>Detail</Link>
       </h2>
       {characterList.map((el:any) => {
          return (<li key={el.id}>{el.name}</li>)

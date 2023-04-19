@@ -4,10 +4,10 @@ import CharactersList from "./CharactersList";
 
 export const MainRoutes = () => {
   return (
-    <HashRouter basename="/rick-morty-app">
+    <HashRouter>
       <Routes >
+      <Route path="/" element={<CharactersList />} />
         <Route path="/character-detail" element={<CharacterDetail />} />
-        <Route path="/" element={<CharactersList />} />
       </Routes>
     </HashRouter>
   );

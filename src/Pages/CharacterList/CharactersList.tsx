@@ -5,7 +5,7 @@ const CharactersList = () => {
     <>
       <div>
         <div className="row" style={{ padding: "2% 4% 2% 4%", margin: 0 }}>
-            <CharacterCard />
+          <CharacterCard />
         </div>
       </div>
     </>

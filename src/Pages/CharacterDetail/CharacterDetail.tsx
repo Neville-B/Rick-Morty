@@ -29,7 +29,6 @@ const CharacterDetail = () => {
         (refDb) => {
           onValue(refDb, async (snapshot) => {
             const data = await snapshot.val();
-            console.log(data);
 
             if (data != null) {
               setCurrLoc(data.location);

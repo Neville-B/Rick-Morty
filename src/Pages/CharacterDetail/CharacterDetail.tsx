@@ -58,6 +58,7 @@ const CharacterDetail = () => {
       const tempLoc = {
         id: characterList[idxChar].id,
         location: locName,
+        url: characterList[idxChar].url
       };
 
       SaveLoc(tempLoc, characterList[idxChar].id).then((resp) => {

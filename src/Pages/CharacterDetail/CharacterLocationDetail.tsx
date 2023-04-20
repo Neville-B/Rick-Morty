@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { GetAllLoc } from "../../Api/api";
+import { GetAllLoc, GetCharData } from "../../Api/api";
 import { onValue } from "firebase/database";
 import { Link, useParams } from "react-router-dom";
 import { Card } from "react-bootstrap";
@@ -26,17 +26,22 @@ const CharacterLocationDetail = () => {
               console.log(data[key].location);
               if (location === data[key].location) {
 
-                let idxChar = characterList.findIndex(
-                  (x) => x.id === parseInt(data[key].id === undefined ? "" : data[key].id)
+                GetCharData(data[key].url).then(
+                  (charData) => {
+                    console.log(charData);
+                    locArr.push(charData);
+                    setCharList(locArr);
+                  }, () => {
+
+                  }
                 );
 
-                locArr.push(characterList[idxChar])
+                // let idxChar = characterList.findIndex(
+                //   (x) => x.id === parseInt(data[key].id === undefined ? "" : data[key].id)
+                // );
               }
             });
-  
-            console.log(locArr);
             
-            setCharList(locArr);
           });
         },
         () => {}

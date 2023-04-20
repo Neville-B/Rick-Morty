@@ -13,6 +13,17 @@ export const ApiData = async (url: string) => {
   );
 };
 
+export const GetCharData = async (url: string) => {
+  return await axios.get(url).then(
+    (charResp) => {
+      return charResp.data;
+    },
+    (err) => {
+      return err;
+    }
+  );
+};
+
 export const SaveLoc = async (location: object, id: number) => {
   await set(ref(database, "locations/character-" + id), location).then(
     (resp) => {},
